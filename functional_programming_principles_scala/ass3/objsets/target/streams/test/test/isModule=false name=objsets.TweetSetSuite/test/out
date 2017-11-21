@@ -1,0 +1,92 @@
+[0m[[0minfo[0m] [0m[32mTweetSetSuite:[0m[0m
+[0m[[0minfo[0m] [0m[31m- filter: on empty set *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSet.filter(TweetSet.scala:42)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$1$$anon$1.<init>(TweetSetSuite.scala:32)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$1.apply$mcV$sp(TweetSetSuite.scala:31)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$1.apply(TweetSetSuite.scala:31)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$1.apply(TweetSetSuite.scala:31)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[31m- filter: a on set5 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSet.filter(TweetSet.scala:42)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$2$$anon$2.<init>(TweetSetSuite.scala:38)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$2.apply$mcV$sp(TweetSetSuite.scala:37)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$2.apply(TweetSetSuite.scala:37)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$2.apply(TweetSetSuite.scala:37)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[31m- filter: 20 on set5 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSet.filter(TweetSet.scala:42)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$3$$anon$3.<init>(TweetSetSuite.scala:44)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$3.apply$mcV$sp(TweetSetSuite.scala:43)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$3.apply(TweetSetSuite.scala:43)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$3.apply(TweetSetSuite.scala:43)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[31m- union: set4c and set4d *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSet.union(TweetSet.scala:51)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$4$$anon$4.<init>(TweetSetSuite.scala:50)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$4.apply$mcV$sp(TweetSetSuite.scala:49)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$4.apply(TweetSetSuite.scala:49)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$4.apply(TweetSetSuite.scala:49)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[31m- union: with empty set (1) *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSet.union(TweetSet.scala:51)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$5$$anon$5.<init>(TweetSetSuite.scala:56)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$5.apply$mcV$sp(TweetSetSuite.scala:55)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$5.apply(TweetSetSuite.scala:55)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$5.apply(TweetSetSuite.scala:55)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[31m- union: with empty set (2) *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSet.union(TweetSet.scala:51)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$6$$anon$6.<init>(TweetSetSuite.scala:62)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$6.apply$mcV$sp(TweetSetSuite.scala:61)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$6.apply(TweetSetSuite.scala:61)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$6.apply(TweetSetSuite.scala:61)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[31m- descending: set5 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.Predef$.$qmark$qmark$qmark(Predef.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSet.descendingByRetweet(TweetSet.scala:75)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$7$$anon$7.<init>(TweetSetSuite.scala:68)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$7.apply$mcV$sp(TweetSetSuite.scala:67)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$7.apply(TweetSetSuite.scala:67)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at objsets.TweetSetSuite$$anonfun$7.apply(TweetSetSuite.scala:67)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
