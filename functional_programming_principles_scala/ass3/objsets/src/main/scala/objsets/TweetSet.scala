@@ -199,8 +199,31 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
     * Calling `mostRetweeted` on an empty set should throw an exception of
     * type `java.util.NoSuchElementException`
     */
-  override def mostRetweeted: Tweet =
-    ???
+  override def mostRetweeted: Tweet = {
+    Seq(
+      right match {
+        case set: NonEmpty =>
+          Some(set.mostRetweeted)
+        case _ =>
+          None
+      },
+      left match {
+        case set: NonEmpty =>
+          Some(set.mostRetweeted)
+        case _ =>
+          None
+      }
+    )
+    .foldLeft(elem) {
+      (topTweet, tweetOpt) =>
+        tweetOpt.fold(topTweet) { tweet =>
+          if (tweet.retweets > topTweet.retweets)
+            tweet
+          else
+            topTweet
+        }
+    }
+  }
 }
 
 trait TweetList {
