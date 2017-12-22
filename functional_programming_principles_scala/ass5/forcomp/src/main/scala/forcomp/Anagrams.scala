@@ -1,5 +1,7 @@
 package forcomp
 
+import scala.collection.mutable
+
 
 object Anagrams {
   /** A word is simply a `String`. */
@@ -52,10 +54,7 @@ object Anagrams {
   def wordOccurrences(w: Word): Occurrences =
     w.toLowerCase
       .view
-      .groupBy {
-        char =>
-          char
-      }
+      .groupBy(identity)
       .mapValues(_.size)
       .toList
       .sorted
@@ -88,9 +87,7 @@ object Anagrams {
    *
    */
   lazy val dictionaryByOccurrences: Map[Occurrences, List[Word]] =
-    dictionary.map { word =>
-      wordOccurrences(word) -> word
-    }.groupBy(_._1).mapValues(_.map(_._2))
+    dictionary.groupBy(wordOccurrences)
 
   /** Returns all the anagrams of a given word. */
   def wordAnagrams(word: Word): List[Word] =
@@ -149,6 +146,16 @@ object Anagrams {
     anagramPermutations(innerCombination(occurrences))
   }
 
+  def canSubtract(x: Occurrences, y: Occurrences): Boolean =
+    y.map(_._1).forall(x.map(_._1).contains) &&
+    !x.exists {
+      case (character, occ1) =>
+        y.find(_._1 == character).fold(false) {
+          case (_, occ2) =>
+            occ1 - occ2 < 0
+        }
+    }
+
   /** Subtracts occurrence list `y` from occurrence list `x`.
    *
    *  The precondition is that the occurrence list `y` is a subset of
@@ -160,16 +167,20 @@ object Anagrams {
    *  and has no zero-entries.
    */
   def subtract(x: Occurrences, y: Occurrences): Occurrences =
-    x.foldLeft(List.empty[(Char, Int)], y) { (acc, occurrence) =>
-      acc._2.find(_._1 == occurrence._1).fold {
-        (acc._1 :+ occurrence) -> acc._2
-      } { _occurrence =>
-        if (occurrence._2 - _occurrence._2 <= 0)
-          acc._1 -> (acc._2 - _occurrence)
+    x.foldLeft(y.toMap) { (acc, occ) =>
+      acc.get(occ._1).fold {
+        acc + (occ._1 -> occ._2)
+      } { occurrences =>
+        if (occ._2 - occurrences < 0)
+          throw new IllegalArgumentException("The precondition is that the occurrence list `y` is a subset of the occurrence list `x` -- any character appearing in `y` must  appear in `x`, and its frequency in `y` must be smaller or equal than its frequency in `x`")
+        else if (occ._2 - occurrences == 0)
+          acc - occ._1
         else
-          (acc._1 :+ occurrence.copy(_2 = occurrence._2 - _occurrence._2)) -> (acc._2 - _occurrence)
+          acc.updated(occ._1, occ._2 - occurrences)
       }
-    }._1
+    }
+    .toList
+    .sorted
 
   /** Returns a list of all anagram sentences of the given sentence.
    *
@@ -211,5 +222,53 @@ object Anagrams {
    *
    *  Note: There is only one anagram of an empty sentence.
    */
-  def sentenceAnagrams(sentence: Sentence): List[Sentence] = ???
+  def sentenceAnagrams(sentence: Sentence): List[Sentence] = {
+    def processCombos(
+      wordIdx: Int,
+      word: Word,
+      sentenceOccs: Occurrences,
+      combos: List[(Word, Int)]
+    ): List[List[Word]] = {
+      def innerProcessCombos(currIdx: Int, acc: List[List[Word]] = List(List.empty[Word])): List[List[Word]] = {
+        if (currIdx < combos.size - 1) {
+          var _sentenceOccsAcc: Occurrences = sentenceOccs
+          val _acc: mutable.ListBuffer[Word] = mutable.ListBuffer[Word](word)
+
+          for (
+            i <- currIdx until combos.size;
+            _word = combos(i)._1;
+            word2Occ = wordOccurrences(_word)
+            if i != wordIdx && canSubtract(_sentenceOccsAcc, word2Occ)
+          ) {
+            _sentenceOccsAcc = subtract(_sentenceOccsAcc, word2Occ)
+            _acc += _word
+          }
+
+          innerProcessCombos(currIdx + 1, acc ++ _acc.toList.combinations(_acc.size))
+        } else {
+          acc
+        }
+      }
+
+      innerProcessCombos(0)
+    }
+
+    if (sentence.isEmpty)
+      List(List.empty[Word])
+    else {
+      val sentenceOccs = sentenceOccurrences(sentence)
+      val combos = combinations(sentenceOccs)
+        .flatMap(dictionaryByOccurrences.get)
+        .flatten
+        .zipWithIndex
+
+      combos
+        .view
+        .foldLeft(List(List.empty[Word])) { (acc, word) =>
+          acc ++ processCombos(word._2, word._1, subtract(sentenceOccs, wordOccurrences(word._1)), combos)
+        }
+        .filter(_.size > 1)
+        .distinct
+    }
+  }
 }
