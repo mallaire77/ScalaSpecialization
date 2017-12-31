@@ -96,8 +96,9 @@ class AnagramsSuite extends FunSuite  {
     )
 
     val anagrams = sentenceAnagrams(sentence)
-    assert(anagrams.forall(anagram => canSubtract(sentenceOccurrences(sentence), sentenceOccurrences(anagram))))
+    assert(anagrams.forall(anagram => subtract(sentenceOccurrences(sentence), sentenceOccurrences(anagram)).isEmpty))
     assert(anagrams.size === anagrams.toSet.size)
+    assert(anagrams.toSet.size === anas.toSet.size)
     assert(anagrams.toSet === anas.toSet)
   }
 }

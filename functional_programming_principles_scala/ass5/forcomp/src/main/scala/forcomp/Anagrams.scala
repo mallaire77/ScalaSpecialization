@@ -244,7 +244,7 @@ object Anagrams {
             _acc += _word
           }
 
-          innerProcessCombos(currIdx + 1, acc ++ _acc.toList.combinations(_acc.size))
+          innerProcessCombos(currIdx + 1, acc :+ _acc.toList)
         } else {
           acc
         }
@@ -267,7 +267,10 @@ object Anagrams {
         .foldLeft(List(List.empty[Word])) { (acc, word) =>
           acc ++ processCombos(word._2, word._1, subtract(sentenceOccs, wordOccurrences(word._1)), combos)
         }
-        .filter(_.size > 1)
+        .filter { combo =>
+          subtract(sentenceOccurrences(sentence), sentenceOccurrences(combo)).isEmpty
+        }
+        .flatMap(_.permutations)
         .distinct
     }
   }
